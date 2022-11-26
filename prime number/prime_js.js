@@ -2,19 +2,27 @@
 {
 	var n,i,flag=true;
 	n=document.getElementById("user_input_1").value;
-	for(i=2;i<n-1;i++)
+	if(n==0)
 	{
-		if(n%1==0)
-		{
-			flag=false;
-			break;
-		}
+	    alert(n + " is  neither prime nor composite");
+        document.getElementById("user_input_1").value="";		
 	}
-	if(flag==true)
-	   alert(n + " is prime");
 	else
-	   alert(n + " is not prime");
-    document.getElementById("user_input_1").value="";
+	{
+		for(i=2;i<n-1;i++)
+		{
+			if(n%1==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+		   alert(n + " is prime");
+		else
+		   alert(n + " is not prime");
+		document.getElementById("user_input_1").value="";
+	}
 }
 function myFunction_2()
 {
@@ -32,7 +40,7 @@ function myFunction_2()
              }
         }
          if(count==0 && num!= 1)
-             ans+=num+",";
+             ans+=num+" ";
     }
     alert("The prime Numbers are "+ ans);
 	document.getElementById("user_input_2").value="";
